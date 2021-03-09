@@ -1,0 +1,52 @@
+:root {
+  --text-accent-color: rgb(202, 164, 133);
+}
+
+body {
+  background: rgb(24, 23, 22);
+  display: flex;
+  font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+  font-weight: lighter;
+  justify-content: center;
+  padding: 1rem;
+  color: rgb(165, 165, 165);
+  color: #e7e7e7;
+}
+
+h1 {
+  font-family: 'Major Mono Display', 'IBM Plex Mono', 'Courier New', Courier, monospace;;
+  text-transform: lowercase;
+  color: var(--text-accent-color);
+}
+
+ h2, h3, h4, h5 {
+  /* font-weight: bold; */
+  color: var(--text-accent-color);
+  font-weight: lighter;
+}
+
+a {
+  color: var(--text-accent-color);
+}
+
+main {
+  max-width: 48rem;
+}
+
+li {
+  list-style-type: circle;
+  margin-top: 1rem;
+}
+
+blockquote {
+  position: relative;
+}
+
+blockquote::before {
+  content: '';
+  height: 100%;
+  width: 5px;
+  left: -20px;
+  background: var(--text-accent-color);
+  position: absolute;
+}
