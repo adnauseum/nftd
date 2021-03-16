@@ -1,36 +1,160 @@
+/* Start CSS reset rules */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* End CSS reset rules */
+
 :root {
-  --text-accent-color: rgb(202, 164, 133);
+  --text-accent-color: #c9bba7;
+  --text-color: #ecece4;
 }
 
 body {
-  background: rgb(24, 23, 22);
-  display: flex;
-  font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+  background: rgb(33, 33, 33);
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
   font-weight: lighter;
+  display: flex;
   justify-content: center;
   padding: 1rem;
-  color: rgb(165, 165, 165);
-  color: #e7e7e7;
+  color: var(--text-color);
+  position: relative;
 }
 
-h1 {
-  font-family: 'Major Mono Display', 'IBM Plex Mono', 'Courier New', Courier, monospace;;
-  text-transform: lowercase;
+time {
+  padding: 1rem;
+}
+
+time::before {
+  content: "- ";
+}
+time::after {
+  content: " -";
+}
+
+p {
+  padding: 0.5rem 0;
+  line-height: 1.5rem;
+}
+
+h1.title {
   color: var(--text-accent-color);
+  font-family: "Major Mono Display", "IBM Plex Mono", "Courier New", Courier,
+    monospace;
+  font-weight: bold;
+  text-align: center;
+  text-transform: lowercase;
+  width: 100%;
 }
 
- h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   /* font-weight: bold; */
   color: var(--text-accent-color);
   font-weight: lighter;
+  text-align: center;
+  width: 100%;
+  margin: 1rem 0;
 }
 
 a {
   color: var(--text-accent-color);
 }
 
+nav {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
 main {
   max-width: 48rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main p {
+  width: 100%;
 }
 
 li {
@@ -40,13 +164,44 @@ li {
 
 blockquote {
   position: relative;
+  margin: 1.5rem 3rem;
 }
 
 blockquote::before {
-  content: '';
+  content: "";
   height: 100%;
   width: 5px;
   left: -20px;
   background: var(--text-accent-color);
   position: absolute;
+}
+
+blockquote p {
+  padding: 0;
+}
+
+blockquote cite {
+  display: block;
+  padding-top: 1rem;
+  position: relative;
+  margin-left: 1rem;
+}
+
+blockquote cite::before {
+  content: "-";
+}
+
+.titles-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.titles-list-container ul li {
+  margin: 0;
+  padding: 0;
+  padding: 0.5rem 0;
 }
